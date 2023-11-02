@@ -39,7 +39,7 @@ function SideNav({ isCollapsed }) {
 					</li>
 					<li className={`sidebar-item ${activeItem === 'DocAvailability' ? 'active' : ''}`}>
 						<Link className="sidebar-link" to='/doctor/DocAvailability' onClick={() => handleLinkClick('DocAvailability')}>
-							<i className="align-middle" data-feather="check"></i> <span className="align-middle">Availability</span>
+							<i className="align-middle" data-feather="check"></i> <span className="align-middle">Pause Time</span>
 						</Link>
 					</li>
 					<li className={`sidebar-item ${activeItem === 'DocPatient' ? 'active' : ''}`}>
@@ -47,11 +47,11 @@ function SideNav({ isCollapsed }) {
 							<i className="align-middle" data-feather="users"></i> <span className="align-middle">Patients</span>
 						</Link>
 					</li>
-					<li className={`sidebar-item ${activeItem === 'DocProfile' ? 'active' : ''}`}>
+					{/* <li className={`sidebar-item ${activeItem === 'DocProfile' ? 'active' : ''}`}>
 						<Link className="sidebar-link" to='/doctor/DocProfile' onClick={() => handleLinkClick('DocProfile')}>
 							<i className="align-middle" data-feather="user"></i> <span className="align-middle">Profile</span>
 						</Link>
-					</li>
+					</li> */}
 
 					
 				</ul>

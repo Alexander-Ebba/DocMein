@@ -24,8 +24,23 @@
             $data['end'] = Carbon::parse($data['end'])->format('Y-m-d H:i:s');
 
             // Create and save the event
-            return Event::create($data);
+            $event = Event::create($data);
+
+            // 'daysOfWeek' should already be an array
+            // Include 'daysOfWeek' as an array in the response
+            $event->daysOfWeek = json_decode($event->daysOfWeek);
+
+            return $event;
         }
+
+
+
+
+        
+
+
+
+
 
 
         public function update(Request $request, $id)

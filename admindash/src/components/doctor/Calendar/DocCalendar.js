@@ -4,7 +4,10 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
+
+
 import axios from 'axios';
+
 
 function DocCalendar() {
   const [weekendsVisible, setWeekendsVisible] = useState(true);
@@ -56,6 +59,7 @@ function DocCalendar() {
 
   const handleDateSelect = (selectInfo) => {
     const title = prompt('Please enter a new patient name for your appointment');
+    const dow = prompt('Please enter recurrence days (e.g., 1,4 for Monday and Thursday)');
 
     if (title) {
       const newEvent = {
@@ -63,6 +67,7 @@ function DocCalendar() {
         start: selectInfo.startStr,
         end: selectInfo.endStr,
         allDay: selectInfo.allDay,
+        daysOfWeek: dow
       };
 
       axios
@@ -80,7 +85,6 @@ function DocCalendar() {
       .then((res) => {
         setCurrentEvents(res.data);
         fetchEvents();
-        calendarRef.current = calendarRef.current || document.getElementById('my-calendar');
         setLoading(false);
       });
   }, []);
@@ -159,7 +163,7 @@ function DocCalendar() {
           <div className="card-body">
             <div className='mb-3'>
             <ul className="nav-item dropdown">
-							<a className="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
+							<b className="nav-icon dropdown-toggle" id="alertsDropdown" data-bs-toggle="dropdown">
 								<div
 								className="position-relative"
 								onMouseEnter={handleMouseEnter}
@@ -172,7 +176,7 @@ function DocCalendar() {
 									</small>
 								)}
 								</div>
-							</a>
+							</b>
 							<div className="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="alertsDropdown">
 								<div className="dropdown-menu-header text-primary">
 									Calendar User Guide
@@ -264,7 +268,7 @@ function DocCalendar() {
           <div className='card-body'>
             <div className='mb-3'>
               <FullCalendar
-                id="my-calendar"
+                ref={calendarRef}
                 plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
                 headerToolbar={{
                   left: 'prev,next today',

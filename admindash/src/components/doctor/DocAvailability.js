@@ -120,13 +120,13 @@ function DocAvailability() {
   return (
     <div className="container-fluid p-0">
       <div className='mb-3'>
-        <h1 className="h3 d-inline align-middle">Add Your Availability</h1>
+        <h1 className="h3 d-inline align-middle">Add Your Pause Time</h1>
       </div>
       <div className='row'>
         <div className="col-12 col-lg-6">
             <div className="card">
                 <div className="card-header">
-                  <h5 className="card-title mb-0"> Availability Information </h5>
+                  <h5 className="card-title mb-0"> Pause Time Information </h5>
                 </div>
                 <div className="card-body">
                   <form onSubmit={submitAvailability}>
@@ -151,7 +151,7 @@ function DocAvailability() {
         <div className="col-12 col-lg-6">
             <div className="card">
                 <div className="card-header">
-                  <h5 className="card-title mb-0"> Availabilty Slots </h5>
+                  <h5 className="card-title mb-0"> Pause Time Slot (editable)</h5>
                 </div>
                 <div className="card-body">
                   <div className='mb-3'>

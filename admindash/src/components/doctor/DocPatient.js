@@ -48,7 +48,7 @@ function DocPatient() {
     patientList.map((item)=>{
       return  (
         <tr key={item.id}>
-          <td>{item.patient_name}</td>
+          <td><Link to={`/doctor/patient/${item.id}`}>{item.patient_name}</Link></td>
           <td>{item.patient_contact}</td>
           <td>{item.emergency_phone}</td>
           <td>

@@ -221,8 +221,8 @@ function AssissAddPatient() {
                     <span className='text-danger'>{patientInput.error_list.emergency_name}</span>
                 </div>
                 <div className='mb-3'>
-                    <label className="form-label">Phone number of the emergency contact</label>
-                    <input type="number" name='emergency_phone' onChange={handleInput} value={patientInput.emergency_phone} className="form-control" placeholder="emergency contact phone number"/>
+                    <label className="form-label">Contact info of the emergency person</label>
+                    <input type="text" name='emergency_phone' onChange={handleInput} value={patientInput.emergency_phone} className="form-control" placeholder="emergency contact Info"/>
                     <span className='text-danger'>{patientInput.error_list.emergency_phone}</span>
                 </div>
                 </div>

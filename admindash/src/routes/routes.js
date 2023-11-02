@@ -2,19 +2,20 @@
 // Doctor Routes
 import DocAvailability from '../components/doctor/DocAvailability';
 import EditAvailability from '../components/doctor/EditAvailability';
-import DocCalendar from '../components/doctor/DocCalendar'
+import DocCalendar from '../components/doctor/Calendar/DocCalendar'
 // import DocMessages from '../components/doctor/DocMessages'
 import DocPatient from '../components/doctor/DocPatient'
-import DocProfile from '../components/doctor/DocProfile';
+// import DocProfile from '../components/doctor/DocProfile';
 
-
+import PatientDetails from '../components/doctor/PatientDetails';
+import AsPatientDetail from '../components/assisstant/AsPatientDetail';
 
 // Assiss Routes
 
 import AssissCalendar from '../components/assisstant/AssissCalendar';
 import AssissEditPatient from '../components/assisstant/AssissEditPatient'
 import AssissPatient from '../components/assisstant/AssissPatient';
-import AssissProfile from '../components/assisstant/AssissProfile';
+// import AssissProfile from '../components/assisstant/AssissProfile';
 import AssissAddPatient from '../components/assisstant/AssissAddPatient';
 
 
@@ -30,11 +31,12 @@ const routes = [
     { path: '/doctor/DocCalendar', exact:true, name: 'DocCalendar', component:DocCalendar},
     // { path: '/doctor/DocMessages', exact:true, name: 'DocMessages', component:DocMessages},
     { path: '/doctor/DocPatient', exact:true, name: 'DocPatient', component:DocPatient},
-    { path: '/doctor/DocProfile', exact:true, name: 'DocProfile', component:DocProfile},
+    // { path: '/doctor/DocProfile', exact:true, name: 'DocProfile', component:DocProfile},
    
 
+    { path: '/doctor/patient/:id', exact:true, name: 'PatientDetails', component:PatientDetails},
+    { path: '/assisstant/patient/:id', exact:true, name: 'AsPatientDetail', component:AsPatientDetail},
 
-    
 
     // assisstant paths
     { path: '/assisstant', exact:true, name: 'Assisstant'},
@@ -42,7 +44,7 @@ const routes = [
     { path: '/assisstant/AddPatient', exact:true, name: 'AssissAddPatient', component:AssissAddPatient},
     { path: '/assisstant/edit_patient/:id', exact:true, name: 'AssissEditPatient', component:AssissEditPatient},
     { path: '/assisstant/AssissPatient', exact:true, name: 'AssissPatient', component:AssissPatient},
-    { path: '/assisstant/AssissProfile', exact:true, name: 'AssissProfile', component:AssissProfile},
+    // { path: '/assisstant/AssissProfile', exact:true, name: 'AssissProfile', component:AssissProfile},
    
 ];
 

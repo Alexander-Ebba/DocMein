@@ -17,6 +17,7 @@ return new class extends Migration
             $table->dateTime('start');
             $table->dateTime('end');
             $table->boolean('allDay');
+            $table->string('daysOfWeek')->nullable();
             $table->timestamps();
         });
     }

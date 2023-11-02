@@ -60,11 +60,11 @@ function SideNav({ isCollapsed }) {
 							<i className="align-middle" data-feather="users"></i> <span className="align-middle">Patients</span>
 						</Link>
 					</li>
-					<li className={`sidebar-item ${activeItem === 'patient/AssissProfile' ? 'active' : ''}`}>
+					{/* <li className={`sidebar-item ${activeItem === 'patient/AssissProfile' ? 'active' : ''}`}>
 						<Link className="sidebar-link" to="/assisstant/AssissProfile"  onClick={() => handleLinkClick('patient/AssissProfile')}>
 							<i className="align-middle" data-feather="user"></i> <span className="align-middle">Profile</span>
 						</Link>
-					</li>
+					</li> */}
 				</ul>
 			</div>
 		</nav>

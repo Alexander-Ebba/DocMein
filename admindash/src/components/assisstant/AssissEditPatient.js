@@ -26,7 +26,7 @@ function AssissEditPatient(props) {
             else if(res.data.status === 404)
             {
                 swal("Error", res.data.message, 'error');
-                history.pushState('/Assisstant/view_patient');
+                history.push('/assisstant/AssissPatient');
             }
             setLoading(false)
         })
@@ -52,6 +52,7 @@ function AssissEditPatient(props) {
             {
                 swal("Succes", res.data.message, 'success');
                 setError([]);
+                history.push("/assisstant/AssissPatient");
             }
             else if(res.data.status === 422)
             {
@@ -61,7 +62,7 @@ function AssissEditPatient(props) {
             else if(res.data.status === 404) 
             {
                 swal("Error", res.data.message, 'error');
-                history.push('/Assisstant/view_patient');
+                history.push('/assisstant/AssissPatient');
             }
         })
     }
@@ -174,7 +175,7 @@ function AssissEditPatient(props) {
                 </div>
                 <div className='mb-3'>
                     <label className="form-label">Temperature</label>
-                    <input type="number" name='temperature' onChange={handleInput} value={patientInput.temperature} className="form-control" placeholder="Patient's Temperature (Celsius)"/>
+                    <input type="text" name='temperature' onChange={handleInput} value={patientInput.temperature} className="form-control" placeholder="Patient's Temperature (Celsius)"/>
                     <small className='text-danger'>{error.temperature}</small>
                 </div>
                 </div>
@@ -194,8 +195,8 @@ function AssissEditPatient(props) {
                     <small className='text-danger'>{error.emergency_name}</small>
                 </div>
                 <div className='mb-3'>
-                    <label className="form-label">Phone number of the emergency contact</label>
-                    <input type="number" name='emergency_phone' onChange={handleInput} value={patientInput.emergency_phone} className="form-control" placeholder="emergency contact phone number"/>
+                    <label className="form-label">Contact of the emergency person</label>
+                    <input type="text" name='emergency_phone' onChange={handleInput} value={patientInput.emergency_phone} className="form-control" placeholder="emergency contact info"/>
                     <small className='text-danger'>{error.emergency_phone}</small>
                 </div>
                 </div>

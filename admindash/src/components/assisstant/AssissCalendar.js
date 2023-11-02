@@ -103,6 +103,8 @@ function AssissCalendar() {
       allDay: dropInfo.event.allDay,
     };
 
+  
+
     axios
       .put(`${API_BASE_URL}/update/${eventId}`, newEvent)
       .then((res) => {
@@ -158,7 +160,7 @@ function AssissCalendar() {
           <div className="card-body">
           <div className='mb-3'>
             <ul className="nav-item dropdown">
-							<a className="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
+							<b className="nav-icon dropdown-toggle"  id="alertsDropdown" data-bs-toggle="dropdown">
 								<div
 								className="position-relative"
 								onMouseEnter={handleMouseEnter}
@@ -171,7 +173,7 @@ function AssissCalendar() {
 									</small>
 								)}
 								</div>
-							</a>
+							</b>
 							<div className="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="alertsDropdown">
 								<div className="dropdown-menu-header text-primary">
 									Calendar User Guide
